@@ -1,0 +1,126 @@
+:root {
+  --clr-black: #434343;
+  --clr-white: #f2f4f3;
+  --clr-succes: #849324;
+  --clr-alert: #dc965a;
+  --clr-error: #ff595e;
+
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  padding: 2rem 5rem;
+  background: #111;
+  color: var(--clr-white);
+  font-family: Helvetica, sans-serif;
+}
+
+section {
+  padding-bottom: 2rem;
+  border-bottom: var(--clr-black) 1px solid;
+}
+
+ul {
+  --bullet-width: 10px;
+
+  margin-inline-start: 1rem;
+
+  & li::before {
+    content: '';
+    display: inline-block;
+
+    width: var(--bullet-width);
+    height: var(--bullet-width);
+
+    background: url('../img/bullet.png');
+    background-size: cover;
+
+    margin-inline-end: 0.3rem;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: var(--clr-alert);
+
+  transition: color 300ms ease-in-out;
+
+  &:hover {
+    color: var(--clr-succes);
+  }
+
+
+}
+
+.img-profile {
+  width: 200px;
+}
+
+.btn-cow {
+  --width: 100px;
+  --margin: 20px;
+  --rotation-time: 5s;
+
+  position: fixed;
+  width: var(--width);
+
+  top: var(--margin);
+  right: var(--margin);
+  object-fit: cover;
+  object-position: center;
+
+  animation-name: rotation;
+  animation-duration: var(--rotation-time);
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  & a {
+    width: inherit;
+    height: inherit;
+  }
+
+  & img {
+    width: inherit;
+    height: inherit;
+  }
+
+  &:hover {
+
+    /* scale: 1.1; */
+  }
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.my-1 {
+  margin-block: 1rem;
+}
+
+.px-1 {
+  padding-inline: 1rem;
+}
+
+.py-1 {
+  padding-block: 1rem;
+}
+
+/* Animations ------ */
+@keyframes rotation {
+  0% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
